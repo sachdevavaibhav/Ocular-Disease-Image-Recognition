@@ -58,7 +58,6 @@ def predict(filename):
 @app.route('/upload', methods=["POST"])
 def upload_image():
     image = request.files['file']
-    print(image)
     if image:
         image_name = image.filename
         image.save(os.path.join("images", image_name))
@@ -68,4 +67,5 @@ def upload_image():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=8000)
+    from waitress import serve
+    serve(app, host='0.0.0.0', port=8080)

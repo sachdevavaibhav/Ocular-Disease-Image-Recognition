@@ -1,0 +1,90 @@
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f2f2f2;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+/* Card Styles */
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.upload-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    width: 100%;
+    border: 4px dashed #ccc;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.upload-label:hover {
+    border-color: #3498db;
+}
+
+.upload-label i {
+    font-size: 50px;
+    color: #3498db;
+    margin-bottom: 10px;
+}
+
+.upload-label span {
+    font-size: 1rem;
+    color: #3498db;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+button[type="submit"] {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+button[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+}
+

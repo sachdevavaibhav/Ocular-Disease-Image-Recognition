@@ -32,6 +32,10 @@ def crop_image(filename):
     
     return cropped_image_np
 
+@app.route('/')
+def healthcheck():
+    return jsonify({"site status": "Working"})
+
 @app.route('/predict/<string:filename>')
 def predict(filename):
     image = crop_image(f'./images/{filename}')
@@ -68,4 +72,5 @@ def upload_image():
 
 if __name__ == "__main__":
     from waitress import serve
+    print("Starting server")
     serve(app, host='0.0.0.0', port=8080)

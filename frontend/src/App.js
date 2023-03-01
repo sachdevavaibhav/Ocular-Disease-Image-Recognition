@@ -1,14 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
+import UploadImageForm from './components/UploadImageForm/UploadImageForm';
 
 function App() {
   return (
-    <div className="App">
-      <form action="/action_page.php">
-        <input type="file" id="myFile" name="filename"/>
-        <input type="submit"/>
-      </form>
-    </div>
+    <UploadImageForm/>
   );
 }
 

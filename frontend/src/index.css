@@ -1,13 +1,109 @@
-body {
+/* Global Styles */
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f2f2f2;
 }
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 50px 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #333;
+}
+
+/* Card Styles */
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.upload-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  width: 20rem;
+  border: 4px dashed #ccc;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.upload-label:hover {
+  border-color: #3498db;
+}
+
+.upload-label i {
+  font-size: 50px;
+  color: #3498db;
+  margin-bottom: 10px;
+}
+
+.upload-label span {
+  font-size: 1rem;
+  color: #3498db;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.buttons {
+  /* width: 20rem; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  width: 7rem;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #2980b9;
+}
+
+.btn-predict {
+  background-color: 	#42ba96;
+}
+
+.btn-predict:hover {
+  background-color: 	#0d7d5c; 
+}
+
+.prediction {
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+      padding: 10px;
+  }
+}
+

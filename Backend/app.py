@@ -4,8 +4,10 @@ import tensorflow_addons as tfa
 import numpy as np
 import os
 import cv2
+from flask_cors import CORS
 
 app = Flask(__name__)
+cors = CORS(app)
 
 model = tf.keras.models.load_model("./model/model_2_v4.h5")
 

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from 'axios'
+import {toast} from 'react-toastify';
 
 const diseaseMap = {
     "A": "Age Related Macular Degeneration",
@@ -18,7 +19,16 @@ function UploadImageForm() {
 
     function handleFileInputChange(event) {
         setSelectedFile(event.target.files[0]);
-        console.log(event.target.files[0])
+        toast(`Click the upload button to upload ${event.target.files[0].name}`, {
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            })
       }
     
       async function handleSubmit(event) {
@@ -27,13 +37,11 @@ function UploadImageForm() {
         formData.append('file', selectedFile);
 
         try {
-            const response = await axios.post(`${process.env.REACT_APP_BACKEND_API}/upload`, formData, {
+            await toast.promise(axios.post(`${process.env.REACT_APP_BACKEND_API}/upload`, formData, {
                 headers: {
                 'Content-Type': 'multipart/form-data'
                 }
-            });
-            console.log('Image uploaded:', response.data);
-            console.log(process.env.REACT_APP_BACKEND_API)
+            }), {pending: 'Uploading Image', success: 'Image uploaded successfully', error: 'Got unexpected error. Please try again.'});
         } catch(error) {
             console.error('Error uploading image:', error);
         }
@@ -41,7 +49,8 @@ function UploadImageForm() {
 
       async function handlePredict() {
         try {
-            const response = await axios.get(`${process.env.REACT_APP_BACKEND_API}/predict/${selectedFile.name}`)
+            const response = await toast.promise(axios.get(`${process.env.REACT_APP_BACKEND_API}/predict/${selectedFile.name}`),
+            {pending: 'Predecting disease', success: 'Got prediction results', error: 'Got unexpected error. Please try again.'})
             const response_data = Object.entries(response.data.prediction)
 
             let diseases = []
@@ -60,6 +69,7 @@ function UploadImageForm() {
         }
         setSelectedFile(null)
       }
+
 
     return(
         <div className="container">

@@ -17,7 +17,7 @@ The Backend folder contains the code for the backend of the web application. The
 - *Link to web application: https://dl-predictor.netlify.app/*
 - *Link to project report: [Report.pdf](https://drive.google.com/file/d/1_c36Yl5Lic0ONRHE2IFb-GwraXQPKNnP/view?usp=sharing)*
 
-**Note: The web appliation can take upto 10 minutes to start after uploading the image since backed is deployed on free azure server.**
+**Note: The web appliation can take upto 10 minutes to start after uploading the image since backend container is deployed on free azure server.**
 
 **Note: The deplyoyed application is only for educational purposes and the model may not give correct results.**
 

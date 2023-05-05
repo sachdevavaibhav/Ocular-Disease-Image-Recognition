@@ -1,3 +1,0 @@
-# DeepLearning
-
-This is temporary
